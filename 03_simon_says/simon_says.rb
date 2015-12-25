@@ -21,6 +21,10 @@ def first_word str
 end
 
 def titleize str
- str.split(" ").capitalize.join(" ")
- #not done
+ str = str.split(" ")
+ str.each do |x| 
+ 	x.capitalize! unless x == "the" || x == "over" || x == "and"
+ end
+ str.first.capitalize!
+ str.join(" ")
 end
